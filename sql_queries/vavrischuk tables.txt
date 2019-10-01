@@ -1,0 +1,48 @@
+CREATE TABLE reader (
+  Surname VARCHAR2(50),
+  Name_ VARCHAR(50), 
+  Patronimic VARCHAR(50),
+  Date_of_birth DATE,
+  Passport NUMBER(10),
+  Phone NUMBER(11),
+  id_reader NUMBER(10),
+  CONSTRAINT prim_id_reader PRIMARY KEY(id_reader));
+
+CREATE TABLE book (
+  Autor VARCHAR2(50),
+  Title_of_book VARCHAR(50), 
+  Date_of_print DATE,
+  quantity NUMBER(11),
+  id_book NUMBER(10),
+  CONSTRAINT prim_id_book PRIMARY KEY(id_book));
+
+CREATE TABLE creator (
+  Title VARCHAR2(50),
+  Address VARCHAR(150), 
+  id_creator NUMBER(10),
+  CONSTRAINT prim_id_creator PRIMARY KEY(id_creator));  
+
+CREATE TABLE genre (
+  Title_of_genre VARCHAR2(50),
+  id_genre NUMBER(10),
+  CONSTRAINT prim_id_genre PRIMARY KEY(id_genre));  
+
+CREATE TABLE extradition (
+  id_book_ex NUMBER(10),
+  id_reader_ex NUMBER(10),
+  date_extradition NUMBER(8),
+  date_return NUMBER(8),
+  CONSTRAINT foreign_id_book_id_book_ex FOREIGN KEY(id_book_ex) REFERENCES book(id_book), 
+  CONSTRAINT foreign_id_reared_id_reader_ex FOREIGN KEY(id_reader_ex) REFERENCES reader(id_reader));
+
+CREATE TABLE book_creator (
+  id_book_cr NUMBER(10),
+  id_creator_cr NUMBER(10),
+  CONSTRAINT foreign_id_book_id_book_cr FOREIGN KEY(id_book_cr) REFERENCES book(id_book), 
+  CONSTRAINT foreign_id_creat_id_creat_cr FOREIGN KEY(id_creator_cr) REFERENCES creator(id_creator));
+
+CREATE TABLE book_genre (
+  id_book_gn NUMBER(10),
+  id_genre_gn NUMBER(10),
+  CONSTRAINT foreign_id_book_id_book_gn FOREIGN KEY(id_book_gn) REFERENCES book(id_book), 
+  CONSTRAINT foreign_id_genre_gn_id_genre FOREIGN KEY(id_genre_gn) REFERENCES genre(id_genre));

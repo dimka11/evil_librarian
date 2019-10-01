@@ -1,0 +1,60 @@
+﻿insert into BOOK (AUTOR,
+                    TITLE_OF_BOOK,
+                    DATE_OF_PRINT,
+                    PRICE, 
+                    ID_BOOK)
+VALUES('МАРТИН СУТЕР',
+	'ИДЕАЛЬНЫЙ ДРУГ',
+	to_date('2013', 'YYYY'),
+	230,
+	20001);
+insert into BOOK (AUTOR,
+                    TITLE_OF_BOOK,
+                    DATE_OF_PRINT,
+                    PRICE, 
+                    ID_BOOK)
+VALUES('АЛЕКСАНДР СЕРГЕЕВИЧ ПУШКИН',
+	'КАПИТАНСКАЯ ДОЧКА',
+	to_date('1836', 'YYYY'),
+	200,
+	20002);
+insert into BOOK (AUTOR,
+                    TITLE_OF_BOOK,
+                    DATE_OF_PRINT,
+                    PRICE, 
+                    ID_BOOK)
+VALUES('ЛЕВ НИКОЛАЕВИЧ ТОЛСТОЙ',
+	'ВОЙНА И МИР',
+	to_date('1868', 'YYYY'),
+	160,
+	20003);
+insert into BOOK (AUTOR,
+                    TITLE_OF_BOOK,
+                    DATE_OF_PRINT,
+                    PRICE, 
+                    ID_BOOK)
+VALUES('АНТОН ПАВЛОВИЧ ЧЕХОВ',
+	'ХАМЕЛЕОН',
+	to_date('1884', 'YYYY'),
+	50,
+	20004);
+insert into BOOK (AUTOR,
+                    TITLE_OF_BOOK,
+                    DATE_OF_PRINT,
+                    PRICE, 
+                    ID_BOOK)
+VALUES('НИКОЛЕНКО',
+	'НЕЙРОННЫЕ СЕТИ',
+	to_date('2018', 'YYYY'),
+	49,
+	20005);
+insert into BOOK (AUTOR,
+                    TITLE_OF_BOOK,
+                    DATE_OF_PRINT,
+                    PRICE, 
+                    ID_BOOK)
+VALUES('ГЕОРГ В. ФРИДРИХ ГЕГЕЛЬ',
+	'НАУКА ЛОГИКИ',
+	to_date('1970', 'YYYY'),
+	43,
+	20006);
