@@ -33,11 +33,22 @@ namespace evil_librarian
         public string Name { get; set; }
     }
 
+    [Table("Customer")]
+    class Customer
+    {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public int Id { get; set; }
+        public string first { get; set; }
+        public string second { get; set; }
+    }
+
     //Context:
     class MyContext : DbContext
     {
 
         public DbSet<People> Persons { get; set; }
+        public DbSet<Customer> Customer{ get; set; }
 
         public MyContext(string filename) : base(new SQLiteConnection()
         {
@@ -57,7 +68,7 @@ namespace evil_librarian
         public MainWindow()
         {
             InitializeComponent();
-           // DataAccessLayer();
+           // DataAccessLayer(); // doesn't work
             Generate();
 
         }
@@ -86,6 +97,14 @@ namespace evil_librarian
                 db.SaveChanges();
                 var d = db.Persons.ToList();
                 var z = 0;
+
+
+                var cust1 = new Customer();
+                cust1.Id = 1;
+                cust1.first = "Dima";
+                cust1.second = "Sokolov";
+                db.Customer.Add(cust1);
+                db.SaveChanges();
             }
         }
     }
