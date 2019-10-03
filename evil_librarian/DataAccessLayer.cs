@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using evil_librarian.Models;
@@ -23,7 +25,7 @@ namespace evil_librarian
             using (var db = new MyContext(ConnectionPath))
             {
                 db.Database.CreateIfNotExists();
-                db.Database.Initialize(false);
+                db.Database.Initialize(true);
                 db.SaveChanges();
             }
 
@@ -49,6 +51,11 @@ namespace evil_librarian
                 return readers.Cast<T>().ToList();
             }
 
+        }
+
+        public MyContext getDB()
+        {
+            return new MyContext(ConnectionPath);
         }
     }
 }
