@@ -10,25 +10,28 @@ namespace evil_librarian.Models
 
         public string Surname { get; set; }
 
-
-        public string Name_ { get; set; }
+        [Column("name_")]
+        public string Name { get; set; }
 
 
         public string Patronimic { get; set; }
 
-        //[DataType(DataType.DateTime)]
-        //public DateTime? Date_Of_Birth { get; set; }
-        public string Date_Of_Birth { get; set; }
+
+        [DataType(DataType.DateTime)]
+        [Column("Date_Of_Birth")]
+        public DateTime DateOfBirth { get; set; }
 
 
-        public int Passport { get; set; }
+        public string Passport { get; set; }
 
 
-        public int Phone { get; set; }
+        public string Phone { get; set; }
+
 
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int Id_Reader { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Column("id_reader")]
+        public int IdReader { get; set; }
 
     }
 }

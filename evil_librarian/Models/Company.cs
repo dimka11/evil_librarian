@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace evil_librarian.Models
 {
-    class Class1
+    class Company
     {
+        public int ID { get; set; }
+        public string Title { get; set; }
+        public DateTime Price { get; set; }
     }
 }

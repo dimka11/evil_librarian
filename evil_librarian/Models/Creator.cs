@@ -1,5 +1,8 @@
 using System;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
+[Table("creator")]
 public class Creator
 {
 
@@ -8,7 +11,9 @@ public class Creator
 
     public string Address { get; set; }
 
-
-    public string IdCreator { get; set; }
+    [Column("id_creator")]
+    [Key]
+    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    public int IdCreator { get; set; }
 
 }

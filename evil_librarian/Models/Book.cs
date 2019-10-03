@@ -1,23 +1,33 @@
 using System;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
-public class Book
+namespace evil_librarian.Models
 {
+    [Table("book")]
+    public class Book
+    {
 
-    public string Autor { get; set; }
+        public string Autor { get; set; }
 
-
-    public string TitleOfBook { get; set; }
-
-
-    public DateTime? DateOfPrint { get; set; }
-
-
-    public string Quantity { get; set; }
+        [Column("Title_of_book")]
+        public string TitleOfBook { get; set; }
 
 
-    public string IdBook { get; set; }
+        [DataType(DataType.DateTime)]
+        public DateTime? DateOfPrint { get; set; }
 
 
-    public int? Price { get; set; }
+        public int? Quantity { get; set; }
 
+
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Column("id_book")]
+        public int IdBook { get; set; }
+
+
+        public int? Price { get; set; }
+
+    }
 }

@@ -5,16 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:evil_librarian"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800"
+        Title="MainWindow" Height="564" Width="1025"
         >
-    <Grid HorizontalAlignment="Left" Height="292" Margin="10,50,0,0" VerticalAlignment="Top" Width="696">
+    <Grid HorizontalAlignment="Left" Height="484" Margin="10,10,0,0" VerticalAlignment="Top" Width="939">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="269*"/>
             <ColumnDefinition Width="79*"/>
         </Grid.ColumnDefinitions>
-        <DataGrid HorizontalAlignment="Left" Height="272" Margin="10,10,0,0" VerticalAlignment="Top" Width="369"/>
-        <Label Content="Label" Grid.Column="1" HorizontalAlignment="Left" Margin="14,100,0,0" VerticalAlignment="Top"/>
+        <Label Content="Label" Grid.Column="1" HorizontalAlignment="Left" Margin="89,108,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.342,0.75"/>
         <Button Content="Button" Grid.Column="1" HorizontalAlignment="Left" Margin="52,198,0,0" VerticalAlignment="Top" Width="75"/>
         <Button Content="Button" Grid.Column="1" HorizontalAlignment="Left" Margin="52,243,0,0" VerticalAlignment="Top" Width="76"/>
+        <TabControl HorizontalAlignment="Left" Height="474" Margin="10,0,0,0" VerticalAlignment="Top" Width="706" TabStripPlacement="Top">
+            <TabItem Header="TabItem">
+                <Grid Background="#FFE5E5E5">
+                    <DataGrid x:Name="dataGrid" Height="436" Margin="-6,0,0,0" Width="706" VerticalAlignment="Top" HorizontalAlignment="Right"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="TabItem">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+        </TabControl>
+        <StackPanel Grid.Column="1" HorizontalAlignment="Left" Height="182" Margin="10,292,0,0" VerticalAlignment="Top" Width="193" Background="#FFEAD19B"/>
     </Grid>
 </Window>
