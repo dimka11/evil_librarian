@@ -7,7 +7,8 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace evil_librarian.Models
-{
+{   
+    [Table("login")]
     public class Login
     {
         [Key]

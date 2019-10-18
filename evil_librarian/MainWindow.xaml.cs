@@ -35,6 +35,11 @@ namespace evil_librarian
         {
             InitializeComponent(); // Init main
 
+            //todo login form showing code commented due development process reason
+            var loginWindow = new LoginWindow(this);
+            //loginWindow.Show();
+            //Visibility = Visibility.Hidden;
+
             //dal.CreateDataBase(); // doesn't work
             var entities_readers = dal.GetDataFromDataBase<Reader>("readers");
             var entities_books = dal.GetDataFromDataBase<Book>("books");
@@ -73,7 +78,7 @@ namespace evil_librarian
             dataGridPublishers.SelectionChanged += dataGridWorking.dataGridPublishers_SelectionChanged;
             dataGridPublishers.PreviewKeyDown += dataGridWorking.dataGridPublishers_PreviewKeyDown;
 
-            //on autogenerating... //todo дата редактируется через раз
+            //on autogeneratingcolumn... //todo дата редактируется через раз
             dataGridReaders.AutoGeneratingColumn += dataGridWorking.ResultsDataGrid_AutoGeneratingColumn;
             dataGridBooks.AutoGeneratingColumn += dataGridWorking.ResultsDataGrid_AutoGeneratingColumn;
 

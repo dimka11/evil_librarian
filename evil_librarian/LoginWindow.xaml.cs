@@ -29,9 +29,21 @@ namespace evil_librarian
 
         private void ButtonEnter_Click(object sender, RoutedEventArgs e)
         {
-            var user = TextBoxUser;
-            var password = TextBoxPassword;
+            var user = TextBoxUser.Text;
+            var password = TextBoxPassword.Text;
             //todo query to DB
+            var dal = _mw.dal;
+            var user_entity = dal.getDB().Login.Find(user);
+            if (user_entity != null && user_entity.Password == password)
+            {
+                _mw.Visibility = Visibility.Visible;
+                Close();
+            }
+            else
+            {
+                MessageBox.Show("Fuck you !");
+            }
+
         }
     }
 }
