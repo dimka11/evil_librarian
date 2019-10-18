@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:evil_librarian"
         mc:Ignorable="d"
-        Title="Введите логин и пароль" Height="284" Width="293.548">
+        Title="Введите логин и пароль" Height="260" Width="300" MinHeight="240" MaxHeight="320" MinWidth="280" MaxWidth="320">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="69*"/>
@@ -13,9 +13,9 @@
         </Grid.ColumnDefinitions>
         <Label Content="Имя пользователя:" HorizontalAlignment="Center" Margin="22,32,144,0" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
         <Label Content="Пароль:" HorizontalAlignment="Center" Margin="23,91,144,0" VerticalAlignment="Top" Width="119" Grid.ColumnSpan="2"/>
-        <Button x:Name="ButtonEnter" Content="Войти" HorizontalAlignment="Center" Margin="47,170,164,0" VerticalAlignment="Top" Width="75" Click="ButtonEnter_Click" Grid.ColumnSpan="2"/>
-        <TextBox x:Name="TextBoxUser" HorizontalAlignment="Center" Height="23" Margin="22,63,144,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
-        <TextBox x:Name="TextBoxPassword" HorizontalAlignment="Center" Height="23" Margin="22,122,144,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
+        <Button x:Name="ButtonEnter" Content="Войти" HorizontalAlignment="Center" Margin="47,169,151,0" VerticalAlignment="Top" Width="84" Click="ButtonEnter_Click" Grid.ColumnSpan="2" RenderTransformOrigin="0.655,0.517"/>
+        <TextBox x:Name="TextBoxUser" HorizontalAlignment="Center" Height="23" Margin="20,63,128,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="134" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="TextBoxPassword" HorizontalAlignment="Center" Height="23" Margin="20,122,128,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="134" Grid.ColumnSpan="2"/>
         <Ellipse Grid.Column="1" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="65" Margin="110,60,0,0" Stroke="Black" VerticalAlignment="Top" Width="65"/>
         <Ellipse Grid.Column="1" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="65" Margin="118,71,0,0" Stroke="Black" VerticalAlignment="Top" Width="65"/>
         <Ellipse Grid.Column="1" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="65" Margin="124,80,0,0" Stroke="Black" VerticalAlignment="Top" Width="65"/>
