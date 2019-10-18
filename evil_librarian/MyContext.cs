@@ -9,12 +9,19 @@ using evil_librarian.Models;
 
 namespace evil_librarian
 {
-    class MyContext : DbContext
+    public class MyContext : DbContext
     {
 
         public DbSet<People> Persons { get; set; }
         public DbSet<Customer> Customer { get; set; }
+        //Entities:
         public DbSet<Reader> Readers { get; set; }
+        public DbSet<Book> Books { get; set; }
+        public DbSet<Creator> Publishers { get; set; }
+        public DbSet<Genre> Genres { get; set; }
+        public DbSet<Extradition> Extraditions { get; set; }
+
+        public DbSet<Login> Login { get; set; }
 
         public MyContext(string filename) : base(new SQLiteConnection()
         {

@@ -16,36 +16,41 @@
         <TabControl HorizontalAlignment="Left" Height="474" Margin="10,0,0,0" VerticalAlignment="Top" Width="706" TabStripPlacement="Top">
             <TabItem Header="Читатели">
                 <Grid Background="#FFE5E5E5">
-                    <DataGrid x:Name="dataGridReaders" Height="auto" Margin="-6,0,0,0" Width="auto" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                    <DataGrid x:Name="dataGridReaders" Height="auto" Margin="0,0,0,0" Width="auto" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+
+                    </DataGrid>
                 </Grid>
             </TabItem>
             <TabItem Header="Книги">
                 <Grid Background="#FFE5E5E5">
-                    <DataGrid x:Name="dataGridBooks" Height="436" Margin="-6,0,0,0" Width="706" VerticalAlignment="Top" HorizontalAlignment="Right"/>
-                </Grid>
-            </TabItem>
-            <TabItem Header="Авторы">
-                <Grid Background="#FFE5E5E5">
-                    <DataGrid x:Name="dataGridAuthors" Height="436" Margin="-6,0,0,0" Width="706" VerticalAlignment="Top" HorizontalAlignment="Right"/>
+                    <DataGrid x:Name="dataGridBooks" Height="auto" Margin="0,0,0,0" Width="auto" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Жанры">
                 <Grid Background="#FFE5E5E5">
-                    <DataGrid x:Name="dataGridGenres" Height="436" Margin="-6,0,0,0" Width="706" VerticalAlignment="Top" HorizontalAlignment="Right"/>
+                    <DataGrid x:Name="dataGridGenres" Height="auto" Margin="0,0,0,0" Width="auto" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Выдача">
                 <Grid Background="#FFE5E5E5">
-                    <DataGrid x:Name="dataGridExtradition" Height="436" Margin="-6,0,0,0" Width="706" VerticalAlignment="Top" HorizontalAlignment="Right"/>
+                    <DataGrid x:Name="dataGridExtradition" Height="auto" Margin="0,0,0,0" Width="auto" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Издательства">
                 <Grid Background="#FFE5E5E5">
-                    <DataGrid x:Name="dataGridPublishers" Height="436" Margin="-6,0,0,0" Width="706" VerticalAlignment="Top" HorizontalAlignment="Right"/>
+                    <DataGrid x:Name="dataGridPublishers" Height="auto" Margin="0,0,0,0" Width="auto" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
                 </Grid>
             </TabItem>
         </TabControl>
-        <StackPanel Grid.Column="1" HorizontalAlignment="Left" Height="182" Margin="10,292,0,0" VerticalAlignment="Top" Width="203" Background="#FFEEE1C6"/>
+        <StackPanel Grid.Column="1" HorizontalAlignment="Left" Height="182" Margin="10,292,0,0" VerticalAlignment="Top" Width="203" Background="#FFEEE1C6">
+            <ListView Height="150" Margin="10,20,10,0">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </StackPanel>
         <Ellipse Fill="#FFB1B1FF" HorizontalAlignment="Left" Height="100" Margin="10,518,0,-134" Stroke="White" VerticalAlignment="Top" Width="100"/>
         <StackPanel Grid.Column="1" HorizontalAlignment="Left" Height="287" Margin="10,0,0,0" VerticalAlignment="Top" Width="193">
             <Button x:Name="EditButton" Content="Редактировать" HorizontalAlignment="Left" Margin="10,20,0,0"  Width="180" RenderTransformOrigin="0.47,1.15" Height="55"/>
@@ -60,5 +65,6 @@
         <Label x:Name="LabelTitleCircle1" Content="Label" HorizontalAlignment="Left" Height="29" Margin="10,489,0,-34" VerticalAlignment="Top" Width="116"/>
         <Label x:Name="LabelTitleCircle2" Content="Label" HorizontalAlignment="Left" Height="29" Margin="172,489,0,-34" VerticalAlignment="Top" Width="116"/>
         <Label x:Name="LabelTitleCircle3" Content="Label" HorizontalAlignment="Left" Height="29" Margin="376,484,0,-29" VerticalAlignment="Top" Width="116"/>
+        <TextBlock x:Name="TextBlockBookInfo" Grid.Column="1" HorizontalAlignment="Left" Margin="10,500,0,-104" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="88" Width="203"/>
     </Grid>
 </Window>

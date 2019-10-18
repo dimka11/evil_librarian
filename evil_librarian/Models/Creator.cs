@@ -6,14 +6,15 @@ using System.ComponentModel.DataAnnotations.Schema;
 public class Creator
 {
 
-    public string Title { get; set; }
-
-
-    public string Address { get; set; }
-
     [Column("id_creator")]
     [Key]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int IdCreator { get; set; }
+
+    [Required]
+    public string Title { get; set; }
+
+    [Required]
+    public string Address { get; set; }
 
 }
