@@ -5,17 +5,23 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
 using evil_librarian.Models;
 
 namespace evil_librarian
 {
-    class DataAccessLayer
+    public class DataAccessLayer
     {
+
         private string ConnectionPath { get; }
+
+        private MyContext _myContext;
 
         public DataAccessLayer(string connectionPath)
         {
             ConnectionPath = connectionPath;
+            _myContext = new MyContext(ConnectionPath);
         }
 
         public void CreateDataBase()
@@ -31,31 +37,48 @@ namespace evil_librarian
 
         }
 
-        public List<T> GetDataFromDataBase<T>(string first, params string[] args)
+        public List<T> GetDataFromDataBase<T>(string entity, params string[] args)
         {
             using (var db = new MyContext(ConnectionPath))
             {
-                //var c = new People();
-                //c.Id = 10;
-                //c.Name = "Дима";
-                //db.Persons.Add(c);
-                //db.SaveChanges();
-                //var d = db.Persons.ToList();
-                List<Reader> readers = db.Readers.ToList();
-                //var cust1 = new Customer();
-                //cust1.Id = 1;
-                //cust1.First = "Dima";
-                //cust1.Second = "Sokolov";
-                //db.Customer.Add(cust1);
-                //db.SaveChanges();
-                return readers.Cast<T>().ToList();
+                switch (entity)
+                {
+                    case "readers":
+                        List<Reader> readers = db.Readers.ToList();
+                        return readers.Cast<T>().ToList();
+
+                    case "books":
+                        List<Book> books = db.Books.ToList();
+                        return books.Cast<T>().ToList();
+
+                    case "creators":
+                        List<Creator> publishers = db.Publishers.ToList();
+                        return publishers.Cast<T>().ToList();
+
+                    case "genres":
+                        List<Genre> genres = db.Genres.ToList();
+                        return genres.Cast<T>().ToList();
+
+                    case "extraditions":
+                        List<Extradition> extraditions = db.Extraditions.ToList();
+                        return extraditions.Cast<T>().ToList();
+
+                    default:
+                        new InvalidOperationException("no entity");
+                        break;
+                }
+
             }
 
+            throw new InvalidOperationException("no entity");
         }
 
         public MyContext getDB()
         {
-            return new MyContext(ConnectionPath);
+            return _myContext;
         }
+
     }
+
+
 }
