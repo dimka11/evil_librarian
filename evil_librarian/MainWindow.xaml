@@ -5,7 +5,60 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:evil_librarian"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800"
+        Title="MainWindow" Height="688" Width="1025"
         >
-    <Label Content="Label" HorizontalAlignment="Left" Margin="328,69,0,0" VerticalAlignment="Top" Height="55" Width="174" MouseDoubleClick="Label_MouseDoubleClick"/>
+    <Grid HorizontalAlignment="Left" Height="484" Margin="10,10,0,0" VerticalAlignment="Top" Width="939">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="269*"/>
+            <ColumnDefinition Width="79*"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Label" Grid.Column="1" HorizontalAlignment="Left" Margin="89,108,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.342,0.75"/>
+        <TabControl HorizontalAlignment="Left" Height="474" Margin="10,0,0,0" VerticalAlignment="Top" Width="706" TabStripPlacement="Top">
+            <TabItem Header="Читатели">
+                <Grid Background="#FFE5E5E5">
+                    <DataGrid x:Name="dataGridReaders" Height="auto" Margin="-6,0,0,0" Width="auto" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Книги">
+                <Grid Background="#FFE5E5E5">
+                    <DataGrid x:Name="dataGridBooks" Height="436" Margin="-6,0,0,0" Width="706" VerticalAlignment="Top" HorizontalAlignment="Right"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Авторы">
+                <Grid Background="#FFE5E5E5">
+                    <DataGrid x:Name="dataGridAuthors" Height="436" Margin="-6,0,0,0" Width="706" VerticalAlignment="Top" HorizontalAlignment="Right"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Жанры">
+                <Grid Background="#FFE5E5E5">
+                    <DataGrid x:Name="dataGridGenres" Height="436" Margin="-6,0,0,0" Width="706" VerticalAlignment="Top" HorizontalAlignment="Right"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Выдача">
+                <Grid Background="#FFE5E5E5">
+                    <DataGrid x:Name="dataGridExtradition" Height="436" Margin="-6,0,0,0" Width="706" VerticalAlignment="Top" HorizontalAlignment="Right"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Издательства">
+                <Grid Background="#FFE5E5E5">
+                    <DataGrid x:Name="dataGridPublishers" Height="436" Margin="-6,0,0,0" Width="706" VerticalAlignment="Top" HorizontalAlignment="Right"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <StackPanel Grid.Column="1" HorizontalAlignment="Left" Height="182" Margin="10,292,0,0" VerticalAlignment="Top" Width="203" Background="#FFEEE1C6"/>
+        <Ellipse Fill="#FFB1B1FF" HorizontalAlignment="Left" Height="100" Margin="10,518,0,-134" Stroke="White" VerticalAlignment="Top" Width="100"/>
+        <StackPanel Grid.Column="1" HorizontalAlignment="Left" Height="287" Margin="10,0,0,0" VerticalAlignment="Top" Width="193">
+            <Button x:Name="EditButton" Content="Редактировать" HorizontalAlignment="Left" Margin="10,20,0,0"  Width="180" RenderTransformOrigin="0.47,1.15" Height="55"/>
+            <Button x:Name="DeleteButton" Content="Удалить" Grid.Column="1" HorizontalAlignment="Left" Margin="10,38,0,0" VerticalAlignment="Top" Width="180" Height="55"/>
+            <Button x:Name="AddButton" Content="Добавить" Grid.Column="1" HorizontalAlignment="Left" Margin="10,38,0,0" VerticalAlignment="Top" Width="180" Height="55"/>
+        </StackPanel>
+        <Ellipse Fill="#FFB1B1FF" HorizontalAlignment="Left" Height="100" Margin="188,518,0,-134" Stroke="White" VerticalAlignment="Top" Width="100"/>
+        <Ellipse Fill="#FFB1B1FF" HorizontalAlignment="Left" Height="100" Margin="376,518,0,-134" Stroke="White" VerticalAlignment="Top" Width="100"/>
+        <Label x:Name="LabelCircle1" Content="0" HorizontalAlignment="Left" Height="46" Margin="48,542,0,-104" VerticalAlignment="Top" RenderTransformOrigin="0.342,0.5" Width="27" FontSize="28"/>
+        <Label x:Name="LabelCircle2" Content="0" HorizontalAlignment="Left" Height="46" Margin="224,542,0,-104" VerticalAlignment="Top" RenderTransformOrigin="0.342,0.5" FontSize="28"/>
+        <Label x:Name="LabelCircle3" Content="0" HorizontalAlignment="Left" Height="46" Margin="416,542,0,-104" VerticalAlignment="Top" RenderTransformOrigin="0.342,0.5" FontSize="28"/>
+        <Label x:Name="LabelTitleCircle1" Content="Label" HorizontalAlignment="Left" Height="29" Margin="10,489,0,-34" VerticalAlignment="Top" Width="116"/>
+        <Label x:Name="LabelTitleCircle2" Content="Label" HorizontalAlignment="Left" Height="29" Margin="172,489,0,-34" VerticalAlignment="Top" Width="116"/>
+        <Label x:Name="LabelTitleCircle3" Content="Label" HorizontalAlignment="Left" Height="29" Margin="376,484,0,-29" VerticalAlignment="Top" Width="116"/>
+    </Grid>
 </Window>

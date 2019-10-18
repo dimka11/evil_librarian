@@ -1,0 +1,24 @@
+INSERT INTO GENRE (TITLE_OF_GENRE,
+                    ID_GENRE)
+VALUES('НАУЧНАЯ ЛИТЕРАТУРА',
+	1001);
+INSERT INTO GENRE (TITLE_OF_GENRE,
+                    ID_GENRE)
+VALUES('РОМАН',
+	1002);
+INSERT INTO GENRE (TITLE_OF_GENRE,
+                    ID_GENRE)
+VALUES('РАССКАЗ',
+	1003);
+INSERT INTO GENRE (TITLE_OF_GENRE,
+                    ID_GENRE)
+VALUES('ИНФОРМАТИКА И ВЫЧИСЛИТЕЛЬНАЯ ТЕХНИКА',
+	1004);
+INSERT INTO GENRE (TITLE_OF_GENRE,
+                    ID_GENRE)
+VALUES('ИСТОРИЧЕСКИЙ РОМАН',
+	1005);
+INSERT INTO GENRE (TITLE_OF_GENRE,
+                    ID_GENRE)
+VALUES('ПРОЗА',
+	1006);

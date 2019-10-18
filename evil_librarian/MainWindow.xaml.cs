@@ -1,7 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
+using System.Data.SQLite;
 using System.Linq;
+using System.Runtime.CompilerServices;
+using System.Security.Permissions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -13,52 +18,27 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using evil_librarian.Models;
+using SQLite.CodeFirst;
 
 namespace evil_librarian
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    /// 
-    class Person
-    {
-        public int Id { get; set; }
-        public string Name { get; set; }
-    }
-
-    class MyContext : DbContext
-    {
-        public DbSet<Person> Persons { get; set; }
-    }
-
+    ///
     public partial class MainWindow : Window
     {
+
         public MainWindow()
         {
-            InitializeComponent();
-            using (var db = new MyContext())
-            {
-                var person = new Person() { Name = "John" };
-                db.Persons.Add(person);
-                db.SaveChanges();
-            }
+            InitializeComponent(); // Init main
+            var dal = new DataAccessLayer(@"..\..\evil.sqlite");
+            //dal.CreateDataBase(); // doesn't work
+            var entities_readers = dal.GetDataFromDataBase<Reader>("forTestOnly");
+            var present = new PresentationLayer();
+            present.UpdateDataGrid(entities_readers);
         }
 
-        private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
-        private void Label_MouseDoubleClick(object sender, MouseButtonEventArgs e)
-        {
-            var label = (Label)sender;
-            //label.Content = "Hello";
-
-            using (var db = new MyContext())
-            {
-                var c = db.Persons.ToList();
-                label.Content = "Hello";
-            }
-        }
     }
 }

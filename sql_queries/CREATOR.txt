@@ -1,0 +1,31 @@
+﻿INSERT INTO CREATOR (TITLE,
+                    ADDRESS,
+                    ID_CREATOR)
+VALUES('РОССМЕН',
+	'МОСКВА',
+	3001);
+INSERT INTO CREATOR (TITLE,
+                    ADDRESS,
+                    ID_CREATOR)
+VALUES('ЭПИТЕР',
+	'САНКТ-ПЕТЕРБУРГ',
+	3002);
+INSERT INTO CREATOR (TITLE,
+                    ADDRESS,
+                    ID_CREATOR)
+VALUES('ЧИТАЛКА',
+	'ОМСК',
+	3003);
+INSERT INTO CREATOR (TITLE,
+                    ADDRESS,
+                    ID_CREATOR)
+VALUES('КОТ',
+	'ТОМСК',
+	3004);
+
+INSERT INTO CREATOR (TITLE,
+                    ADDRESS,
+                    ID_CREATOR)
+VALUES('МАРС',
+	'ЧИТА',
+	3005);
