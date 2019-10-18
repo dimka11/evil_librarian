@@ -35,9 +35,9 @@ namespace evil_librarian
             InitializeComponent(); // Init main
             var dal = new DataAccessLayer(@"..\..\evil.sqlite");
             //dal.CreateDataBase(); // doesn't work
-            var entities = dal.GetDataFromDataBase<Reader>("forTestOnly");
+            var entities_readers = dal.GetDataFromDataBase<Reader>("forTestOnly");
             var present = new PresentationLayer();
-            present.UpdateDataGrid(entities);
+            present.UpdateDataGrid(entities_readers);
         }
 
     }

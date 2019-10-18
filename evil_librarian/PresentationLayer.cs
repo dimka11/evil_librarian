@@ -15,7 +15,7 @@ namespace evil_librarian
 
         public void UpdateDataGrid<T>(T data)
         {
-            Form.dataGrid.ItemsSource = data as IEnumerable;
+            Form.dataGridReaders.ItemsSource = data as IEnumerable;
         }
     }
 }
