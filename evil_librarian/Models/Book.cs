@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -12,6 +13,7 @@ namespace evil_librarian.Models
         [Column("id_book")]
         public int IdBook { get; set; }
 
+        [Column("Autor")]
         [Required]
         public string Autor { get; set; }
 
@@ -30,6 +32,13 @@ namespace evil_librarian.Models
 
 
         public int? Price { get; set; }
+
+
+        //public ICollection<Extradition> Extraditions { get; set; }
+
+        public ICollection<BookCreator> BookCreator { get; set; }
+
+        public ICollection<BookGenre> BookGenre { get; set; }
 
     }
 }

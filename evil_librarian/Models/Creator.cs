@@ -1,6 +1,8 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using evil_librarian.Models;
 
 [Table("creator")]
 public class Creator
@@ -17,4 +19,5 @@ public class Creator
     [Required]
     public string Address { get; set; }
 
+    public virtual ICollection<BookCreator> BookCreator { get; set; }
 }

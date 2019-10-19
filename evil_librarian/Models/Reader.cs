@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -32,6 +33,8 @@ namespace evil_librarian.Models
 
 
         public string Phone { get; set; }
+
+        //public ICollection<Extradition> Extraditions { get; set; }
 
     }
 }
