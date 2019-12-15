@@ -1,37 +1,45 @@
-﻿<Window x:Class="evil_librarian.Window1"
+﻿<Window x:Class="evil_librarian.EditingWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:evil_librarian"
         mc:Ignorable="d"
-        Title="Редактирование записи" Height="450" Width="800">
+        Title="Редактирование записи" Height="444" Width="800" Activated="Window_Activated">
     <Grid>
-        <StackPanel HorizontalAlignment="Left" Height="65" Margin="0,364,0,-10" VerticalAlignment="Center" Width="792">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="98*"/>
+            <ColumnDefinition Width="37*"/>
+            <ColumnDefinition Width="44*"/>
+            <ColumnDefinition Width="217*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel HorizontalAlignment="Left" Height="57" Margin="0,250,0,106" VerticalAlignment="Center" Width="792" Grid.ColumnSpan="4">
             <Grid Height="56">
-                <Button Content="Сохранить" Margin="10,6,668,10" Height="40" VerticalAlignment="Center"/>
+                <Button Content="Сохранить" Margin="10,6,668,10" Height="40" VerticalAlignment="Center" Click="Button_Click"/>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Height="31" Margin="383,0,0,0" VerticalAlignment="Top" Width="399">
-                    <Button Content="предыдущая" Margin="0,0,20,0" Width="80"/>
-                    <Button Content="следующая" Margin="0,0,40,0" Width="80"/>
+                    <Button Content="предыдущая" Margin="0,0,20,0" Width="80" Click="Button_Click_1"/>
+                    <Button Content="следующая" Margin="0,0,40,0" Width="80" Click="Button_Click_2"/>
                 </StackPanel>
                 <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="31" Margin="383,0,0,0" VerticalAlignment="Top" Width="409"/>
             </Grid>
         </StackPanel>
-        <StackPanel HorizontalAlignment="Left" Height="349" Margin="10,10,0,0" VerticalAlignment="Top" Width="370">
-            <Label Content="Label" Height="32" FontSize="16"/>
-            <Label Content="Label" Height="32" FontSize="16"/>
-            <Label Content="Label" Height="32" FontSize="16"/>
-            <Label Content="Label" Height="32" FontSize="16"/>
-            <Label Content="Label" Height="32" FontSize="16"/>
-            <Label Content="Label" Height="32" FontSize="16"/>
+        <StackPanel HorizontalAlignment="Left" Height="235" Margin="10,10,0,0" VerticalAlignment="Top" Width="370" Grid.ColumnSpan="4">
+            <Label Content="id" Height="32" FontSize="16"/>
+            <Label Content="Фамилия" Height="32" FontSize="16"/>
+            <Label Content="Имя" Height="32" FontSize="16"/>
+            <Label Content="Отчество" Height="32" FontSize="16"/>
+            <Label Content="Дата рождения" Height="32" FontSize="16"/>
+            <Label Content="Паспорт" Height="32" FontSize="16"/>
+            <Label Content="Телефон" Height="32" FontSize="16"/>
         </StackPanel>
-        <StackPanel HorizontalAlignment="Right" Height="349" Margin="0,10,10,0" VerticalAlignment="Top" Width="370">
-            <TextBox Height="32" TextWrapping="Wrap" Text="TextBox" FontSize="16"/>
-            <TextBox Height="32" TextWrapping="Wrap" Text="TextBox" FontSize="16"/>
-            <TextBox Height="32" TextWrapping="Wrap" Text="TextBox" FontSize="16"/>
-            <TextBox Height="32" TextWrapping="Wrap" Text="TextBox" FontSize="16"/>
-            <TextBox Height="32" TextWrapping="Wrap" Text="TextBox" FontSize="16"/>
-            <TextBox Height="32" TextWrapping="Wrap" Text="TextBox" FontSize="16"/>
+        <StackPanel HorizontalAlignment="Right" Height="235" Margin="0,10,10,0" VerticalAlignment="Top" Width="370" Grid.Column="3">
+            <TextBox x:Name="TextBoxId" Height="32" TextWrapping="Wrap" Text="" FontSize="16" TextChanged="TextBoxId_TextChanged"/>
+            <TextBox x:Name="TextBoxSecond" Height="32" TextWrapping="Wrap" Text="" FontSize="16" TextChanged="TextBoxId_TextChanged"/>
+            <TextBox x:Name="TextBoxFirst" Height="32" TextWrapping="Wrap" Text="" FontSize="16" TextChanged="TextBoxId_TextChanged"/>
+            <TextBox x:Name="TextBoxMiddle" Height="32" TextWrapping="Wrap" Text="" FontSize="16" TextChanged="TextBoxId_TextChanged"/>
+            <TextBox x:Name="TextBoxBirthDate" Height="32" TextWrapping="Wrap" Text="" FontSize="16" TextChanged="TextBoxId_TextChanged"/>
+            <TextBox x:Name="TextBoxPassport" Height="32" TextWrapping="Wrap" Text="" FontSize="16" TextChanged="TextBoxId_TextChanged"/>
+            <TextBox x:Name="TextBoxPhone" Height="32" TextWrapping="Wrap" Text="" FontSize="16" TextChanged="TextBoxId_TextChanged"/>
         </StackPanel>
 
     </Grid>

@@ -84,6 +84,11 @@ namespace evil_librarian
 
         }
 
+        private void EditButton_Click(object sender, RoutedEventArgs e)
+        {
+            new EditingWindow().ShowDialog();
+
+        }
     }
 
 }
